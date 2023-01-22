@@ -1,39 +1,3 @@
-install.packages("swirl",dep=T)
-swirl()
-library(swirl)
-swirl()
-getwd()
-ls()
-x <- 9
-ls()
-list.files()
-?list.files
-args()
-list.files(args)
-args(list.files)
-"old.dir"
-old.dir <- getwd()
-dir.create()
-dir.create(testdir)
-dir.create("testdir")
-setwd()
-setwd("testdir")
-file.reate("mytest.R")
-file.create("mytest.R")
-list.files()
-file.exists("mytest.R")
-file.info("mytest.R")
-file.rename(from = "mytest.R" , to = "mytest2.R")
-file.copy("mytest2.R" , "mytest3.R")
-file.path("mytest3.R")
-file.path("folder1" , "folder2")
-?dir.create
-dir.create(file.path("testdir2" , "testdir3"), recursive = TRUE)
-setwd("..")
-setwd()
-setwd(old.dir)
-1:20
-pi:10
 15:1
 ? `:`
 seq(1,20)
@@ -181,10 +145,106 @@ library(httr)
 library("httr")
 set_config(config(ssl_verifypeer = 0L))
 install.packages("httr")
-library("httr")
-set_config(config(ssl_verifypeer = 0L))
+Feeds <- which(beren3$event == "bottle")
 setwd('~/Desktop/Evolution/Tasks/Task_02')
-Datal <- read.csv('http://jonsmitchell.com/data/beren.csv' , stringsAsFactors=F)
-Datal <- read.csv('https://jonsmitchell.com/data/beren.csv' , stringsAsFactors=F)
 Data1 <- read.csv("beren.csv" , stringsAsFactors=F)
-Data1 <- read.csv("beren.csv" , stringsAsFactors=F)
+Data2 <- read.csv("cyrus.csv", stringsAsFactors=F)
+write.csv (Data1, 'rawdata.csv' , quote=F)
+Data1
+head(Data1)
+GlargleBrgle <- Data1
+head(GlargleBrgle)
+length(Data1)
+nrow(Data1)
+ncol(Data1)
+colnames(Data1)
+head(Data1)
+Data1 [1, ]
+Data1 [2, ]
+Data1 [1:3,]
+Data1 [1:3, 4]
+Data1 [1:5, 1:3]
+Data1 [257, ]
+Feeds <- which(Data1 [,9] == 'bottle')
+berenMilk <- Data1 [Feeds ,]
+head(berenMilk)
+nrow(berenMilk)
+Feeds <- which(Data1 [, 'event'] == 'bottle')
+Feeds <- which(Data1$event == 'bottle')
+dayID <- apply(Data1, 1, function(x) paste(x[1:3], collapse='-'))
+dateID <- sapply(dayID, as.Date, format = "%Y-%m-%d", origin = "2019-04-18")
+Data1$age <- dateID - dateID[which(Data1$event == 'birth')]
+head(Data1)
+beren2 <- Data1
+beren3 <- beren2[order(beren2$age) ,]
+write.csv(beren3, 'beren_new.csv', quote=F, row.names=FALSE)
+Feeds <- which(beren3$event == "bottle")
+avgMilk <- mean(beren3$value[Feeds])
+avgFeed <- tapply(beren3$value[Feeds], beren3$age[Feeds], mean)
+varFeed <- tapply(beren3$value[Feeds], beren3$age[Feeds], var)
+totalFeed <- tapply(beren3$value[Feeds], beren3$age[Feeds], sum)
+numFeeds <- tapply(beren3$value[Feeds], beren3$age[Feeds], length)
+cor(beren3$value[Feeds], beren3$age[Feeds])
+cor.test(beren3$value[Feeds], beren3$age[Feeds])
+berenCor <- cor.test(beren3$value[Feeds], beren3$age[Feeds])
+summary(berenCor)
+berenANOVA <- aov(beren3$value[Feeds]~ beren3$caregiver[Feeds])
+boxplot(beren3$value[Feeds] ~ beren3$caregiver[Feeds], xlab= "who gave the bottle", ylab= "amount of milk consumed (oz)")
+?par
+par(las=1, mar=c(5,5,1,1), mgp=c(2,0.5,0), tck=-0.01)
+plot(as.numeric(names(totalFeed)), totalFeed, type="b", pch=16, xlab="age in days", ylab="ounces of milk")
+abline(h=mean(totalFeed), lty=2, col='red')
+pdf("r02b-totalMilkByDay.pdf", height=4, width=4)
+par(las=1, mar=c(5,5,1,1), mgp=c(2,0.5,0), tck=-0.01)
+plot(as.numeric(names(totalFeed)), totalFeed, type="b", pch=16, xlab="age in days", ylab="ounces of milk")
+abline(h=mean(totalFeed), lty=2, col='red')
+dev.off()
+source("http://jonsmitchell.com/code/plotFxn02b.R")
+Days <- unique(beren3$age[Feeds])
+ndays <- length(Days)
+Alpha <- 0.75
+divCols <- c(rgb(158/255,1/255,66/255, Alpha),rgb(213/255,62/255,79/255, Alpha),rgb(244/255,109/255,67/255, Alpha),rgb(253/255,174/255,97/255, Alpha),rgb(254/255,224/255,139/255, Alpha),rgb(255/255,255/255,191/255, Alpha),rgb(230/255,245/255,152/255, Alpha),rgb(171/255,221/255,164/255, Alpha),rgb(102/255,194/255,165/255, Alpha),rgb(50/255,136/255,189/255, Alpha),rgb(94/255,79/255,162/255, Alpha))
+Pal <- colorRampPalette(divCols, interpolate = "spline", alpha = T)
+Cols <- Pal(ndays)
+names(Cols) <- Days
+par(mar=c(4,4,1,1), las=1, mfrow=c(1, 2), mgp=c(2, 0.5, 0), tck=-0.01, cex.axis=1, cex.lab=1.2)
+plot(1, 1, xlim=c(7, 16), ylim=c(0, 20), type="n", xlab="time of day", ylab="total milk (oz)")
+}
+points(Times, Amounts, col=Cols[as.character(Day)], type="b", pch=16)
+for (Day in Days)	{
+FeedsOnDay <- which(beren3$age[Feeds] == Day)
+Times <- beren3$start_hour[Feeds[FeedsOnDay]] + (beren3$start_minute[Feeds[FeedsOnDay]] / 60)
+Amounts <- cumsum(beren3$value[Feeds[FeedsOnDay]])
+points(Times, Amounts, col=Cols[as.character(Day)], type="b", pch=16)
+dayVec <- c(min(Days), Days[floor(0.25*ndays)], median(Days), Days[ceiling(0.75*ndays)], max(Days))
+legend("top", legend=dayVec, pch=21, pt.bg=Cols[as.character(dayVec)], horiz = T, bty = "n", pt.cex=2, title = "age in days")
+Naps <- which(beren2$event == "nap")
+startT <- beren2$start_hour[Naps] + ( beren2$start_minute[Naps] / 60 )
+endT <- beren2$end_hour[Naps] + ( beren2$end_minute[Naps] / 60 )
+napTs <- endT - startT
+plot(1,1,type="n", xlim=c(125, 700), ylim=c(7, 16), xlab="age (days)", ylab="nap time")
+x <- tapply(1:length(Naps), beren2$age[Naps], function(x) segments(beren2$age[Naps][x], startT[x], beren2$age[Naps][x], endT[x]))
+x <- tapply(1:length(Naps), beren2$age[Naps], function(x) segments(beren2$age[Naps][x], startT[x], beren2$age[Naps][x], endT[x]))
+Days <- unique(beren3$age[Feeds])
+ndays <- length(Days)
+Alpha <- 0.75
+divCols <- c(rgb(158/255,1/255,66/255, Alpha),rgb(213/255,62/255,79/255, Alpha),rgb(244/255,109/255,67/255, Alpha),rgb(253/255,174/255,97/255, Alpha),rgb(254/255,224/255,139/255, Alpha),rgb(255/255,255/255,191/255, Alpha),rgb(230/255,245/255,152/255, Alpha),rgb(171/255,221/255,164/255, Alpha),rgb(102/255,194/255,165/255, Alpha),rgb(50/255,136/255,189/255, Alpha),rgb(94/255,79/255,162/255, Alpha))
+Pal <- colorRampPalette(divCols, interpolate = "spline", alpha = T)
+Cols <- Pal(ndays)
+names(Cols) <- Days
+par(mar=c(4,4,1,1), las=1, mfrow=c(1, 2), mgp=c(2, 0.5, 0), tck=-0.01, cex.axis=1, cex.lab=1.2)
+plot(1, 1, xlim=c(7, 16), ylim=c(0, 20), type="n", xlab="time of day", ylab="total milk (oz)")
+for (Day in Days)	{
+FeedsOnDay <- which(beren3$age[Feeds] == Day)
+Times <- beren3$start_hour[Feeds[FeedsOnDay]] + (beren3$start_minute[Feeds[FeedsOnDay]] / 60)
+Amounts <- cumsum(beren3$value[Feeds[FeedsOnDay]])
+points(Times, Amounts, col=Cols[as.character(Day)], type="b", pch=16)
+dayVec <- c(min(Days), Days[floor(0.25*ndays)], median(Days), Days[ceiling(0.75*ndays)], max(Days))
+legend("top", legend=dayVec, pch=21, pt.bg=Cols[as.character(dayVec)], horiz = T, bty = "n", pt.cex=2, title = "age in days")
+Naps <- which(beren2$event == "nap")
+startT <- beren2$start_hour[Naps] + ( beren2$start_minute[Naps] / 60 )
+endT <- beren2$end_hour[Naps] + ( beren2$end_minute[Naps] / 60 )
+napTs <- endT - startT
+plot(1,1,type="n", xlim=c(125, 700), ylim=c(7, 16), xlab="age (days)", ylab="nap time")
+x <- tapply(1:length(Naps), beren2$age[Naps], function(x) segments(beren2$age[Naps][x], startT[x], beren2$age[Naps][x], endT[x]))
+source('plotFxn02b.R')
