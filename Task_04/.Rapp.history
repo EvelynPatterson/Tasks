@@ -1,0 +1,360 @@
+file.info("mytest.R")
+file.rename(from = "mytest.R" , to = "mytest2.R")
+file.copy("mytest2.R" , "mytest3.R")
+file.path("mytest3.R")
+file.path("folder1" , "folder2")
+?dir.create
+dir.create(file.path("testdir2" , "testdir3"), recursive = TRUE)
+setwd("..")
+setwd()
+setwd(old.dir)
+1:20
+pi:10
+15:1
+? `:`
+seq(1,20)
+seq(0,10,by=0.5)
+my_seq <- seq(5, 10, length=30)
+length(my_seq)
+1:length(my_seq)
+seq(along.with = my_seq)
+seq_along(my_seq)
+rep(0, times = 40)
+rep(c(0, 1, 2), times = 10)
+rep(c(0, 1, 2), each = 10)
+x <- c(44, NA, 5, NA)
+x*3
+y <- rnorm(1000)
+z <- rep(NA, 1000)
+my_data <- sample(c(y, z), 100)
+my_na <- is.na(my_data)
+my_na
+my_data == NA
+sum(my_na)
+my_data
+0/0
+Inf - Inf
+x
+x[1:10]
+x[is.na(x)]
+y <- x[!is.na(x)]
+y
+y[y > 0]
+x[x > 0]
+x[!is.na(x) & x > 0]
+x[c(3, 5, 7)]
+x[0]
+x[3000]
+x[c(-2, -10)]
+x[-c(2, 10)]
+vect <- c(foo = 11, bar = 2, norf = NA)
+vect
+names(vect)
+vect2 <- c(11, 2, NA)
+names(vect2) <- c("foo", "bar", "norf")
+identical(vect, vect2)
+vect["bar"]
+vect[c("foo", "bar")]
+my_vector <- 1:20
+my_vector
+dim(my_vector)
+length(my_vector)
+dim(my_vector) <- c(4, 5)
+dim(my_vector)
+attributes(my_vector)
+my_vector
+class(my_vector)
+my_matrix <- my_vector
+?matrix
+my_matrix2 <- matrix(data = 1:20,nrow = 4, ncol = 5)
+identical(my_matrix, my_matrix2)
+patients <- c("Bill", "Gina", "Kelly", "Sean")
+cbind(patients, my_matrix)
+my_data <- data.frame(patients, my_matrix)
+my_data
+class(my_data)
+cnames <- c("patient", "age", "weight", "bp", "rating", "test")
+colnames(my_data)
+colnames(my_data) <- cnames
+my_data
+TRUE == TRUE
+(FALSE == FALSE) == FALSE
+(FALSE == TRUE) == FALSE
+6 == 7
+6 < 7
+10 <= 10
+5 != 7
+5 !== 7
+5 !TRUE 7
+!(5 == 7)
+FALSE & FALSE
+TRUE & c(TRUE, FALSE, FALSE)
+TRUE && c(TRUE, FALSE, FALSE)
+TRUE | c(TRUE, FALSE, FALSE)
+TRUE || c(TRUE, FALSE, FALSE)
+5 > 8 || 6 != 8 && 4 > 3.9
+isTRUE(6 > 4)
+identical('twins', 'twins')
+xor(5 == 6, !FALSE)
+ints <- sample(10)
+ints
+ints > 5
+which(ints > 7)
+any(0)
+any(< 0)
+any(ints < 0)
+all(ints > 0)
+Sys.Date()
+mean(c(2, 4, 5))
+submit()
+boring_function("My first function!")
+boring_function
+submit()
+my_mean(c(4, 5, 10))
+submit()
+remainder(5)
+remainder(11, 5)
+remainder(divisor = 11, num = 5)
+remainder(4, div = 2)
+args(remainder)
+submit()
+evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
+evaluate(function(x){x+1},6)
+evaluate(function(x){x[1]}, c(8, 4, 0))
+evaluate(function(x){x[length(x)]}, c(8, 4, 0))
+?paste
+paste("Programming", "is", "fun!")
+submit()
+telegram("hi", "everyone")
+submit()
+mad_libs("car", "large", "seatbelt")
+submit()
+'I' %p% 'love' %p% 'R!'
+data(cars)
+?cars
+head(cars)
+plot(cars)
+?plot()
+?plot
+plot(x = cars$speed, y = cars$dist)
+plot(x = cars$dist, y = cars$speed)
+plot(x = cars$speed, y = cars$dist, xlab = "Speed")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance", xlab = "Speed")
+plot(cars, main = "My Plot")
+plot(cars, sub = "My Plot Subtitle")
+plot(cars, col = 2)
+plot(cars, xlim = c(10, 15))
+plot(cars, pch = 2)
+data(mtcars)
+?boxplot
+boxplot(formula = mpg ~ cyl, data = mtcars)
+hist(mtcars$mpg)
+library(httr)set_config(config(ssl_verifypeer = OL))
+library(httr)set_config(config(ssl_verifypeer = 0L))
+install.packages(httr)
+library(httr)
+library("httr")
+set_config(config(ssl_verifypeer = 0L))
+install.packages("httr")
+setwd('~/Desktop/Evolution/Tasks/Task_04')
+setwd('~/Desktop/Evolution/Tasks/Task_04')
+source("http://jonsmitchell.com/code/fxn05.R")
+source("source('~/Desktop/Evolution/Tasks/Task_04/fxn05.R', chdir = TRUE)")
+source("fxn05.R")
+Pop1 <- simPop(Popsize = 50, nGenerations = 100, initial_p = 0.5, h = 1, s = 0)
+plot(1:nrow(Pop1), Pop1 [,1], ylim=c(0,1), type = "1", xlab="generation", ylab="allele freq.", lwd=2)
+plot(1:nrow(Pop1), Pop1 [,1], ylim=c(0,1), type = "1", xlab="generation", ylab="allele freq.", lwd=2)
+plot(1:nrow(Pop1), Pop1 [,1], ylim=c(0,1), type = "l", xlab="generation", ylab="allele freq.", lwd=2)
+lines(1:nrow(Pop1), Pop1[,2], lwd=2, col='red')
+legend("topleft", legend=c("a", "b"), col=c("black", "red"), lwd=2, bty="n")
+pdf('Pop1.pdf')#
+plot(1:nrow(Pop1), Pop1 [,1], ylim=c(0,1), type = "l", xlab="generation", ylab="allele freq.", lwd=2)#
+lines(1:nrow(Pop1), Pop1[,2], lwd=2, col='red')#
+legend("topleft", legend=c("a", "b"), col=c("black", "red"), lwd=2, bty="n")#
+dev.off()
+plotFit(nruns=10, n=50, ngens=100, init_p=0.5, h=1, s=0)
+pdf('Graph2.pdf')#
+plotFit(nruns=10, n=50, ngens=100, init_p=0.5, h=1, s=0)#
+dev.off()
+Expectation <- c(10,10,10,10)
+Observed <- c(15,15,5,5)
+Chisq <- sum(((Expectation-Observed)^2)/Expectation)
+barplot(rbind(Expectation,Observed), beside =T, main = bquote(chi^2 ~ "=" ~ . (Chisq)), legend.text=c("expected", "observed"))
+pdf('barplot.pdf')#
+barplot(rbind(Expectation,Observed), beside =T, main = bquote(chi^2 ~ "=" ~ . (Chisq)), legend.text=c("expected", "observed"))#
+dev.off()
+Observerd <- c(5,0,0,35)
+Expectation <- c(10,10,10,10)
+Observerd <- c(5,0,0,35)
+Chisq <- sum(((Expectation-Observed)^2)/Expectation)
+barplot(rbind(Expectation,Observed), beside =T, main = bquote(chi^2 ~ "=" ~ . (Chisq)), legend.text=c("expected", "observed"))
+setwd('~/Desktop/Evolution/Tasks/Task_04')
+results <- read.csv("biol112labresults.csv", stringsAsFactors=F)
+results <- read.csv("http://jonsmitchell.com/data/biol112labresults.csv", stringsAsFactors=F)
+results <- read.csv("biol112labresults.csv", stringsAsFactors=F)
+counts <- results[,c("yellow", "red", "green", "blue","black", "tan")]
+backgrounds <- c("White", "Red", "Yellow", "Green", "Blue", "Black")
+backgroundCol <- c("white", "#d53e4f", "#fee08b", "#abdda4", "#3288bd","black")
+calcChi(counts[1,])
+Chisqs <- apply(counts, 1, calcChi)
+plotChis(counts)
+pdf('Chisqplot.pdf')#
+plotChis(counts)#
+dev.off()
+Avg <- mean(Chisqs)
+backgroundAvgs <- tapply(Chisqs, results[,3], mean)
+propSig <- length(which(Chisqs > 11.70))/length(Chisqs)
+percSig <- round(100*propSig)
+plotChis(counts)
+Avg <- mean(Chisqs)
+plotChis(counts)
+par(las=1, mar=c(4,4,1,1), mgp=c(2,0.5,0), tck=-0.01, cex.axis=1)
+hist(Chisqs, main="", xlab="chi-squared values", ylab="frequency")
+pdf('hist.pdf')#
+par(las=1, mar=c(4,4,1,1), mgp=c(2,0.5,0), tck=-0.01, cex.axis=1)#
+hist(Chisqs, main="", xlab="chi-squared values", ylab="frequency")#
+dev.off()
+dev.off()
+dev.off()
+par(las=1, mar=c(4,4,1,1), mgp=c(2,0.5,0), tck=-0.01, cex.axis=1)
+plot(1,1,xlim=c(0,400), ylim=c(1,8.5), xlab="", ylab="", type="n", yaxt="n")
+axis(2, at=1:length(backgrounds), labels=backgrounds)
+mtext(side=1, expression(chi^2), cex=1.75, line=2.5)
+counter <- 1
+for (i in backgrounds) {#
+	Data <- Chisqs[which(results[,3]== i)]#
+	addHist(Y=counter, Dat=Data, Color=backgroundCol[counter])#
+	counter <- counter +1#
+}
+abline(v=11.70, lty=2, lwd=2, col='black')
+pdf('Patternplot.pdf')#
+par(las=1, mar=c(4,4,1,1), mgp=c(2,0.5,0), tck=-0.01, cex.axis=1)#
+plot(1,1,xlim=c(0,400), ylim=c(1,8.5), xlab="", ylab="", type="n", yaxt="n")#
+axis(2, at=1:length(backgrounds), labels=backgrounds)#
+mtext(side=1, expression(chi^2), cex=1.75, line=2.5)#
+counter <- 1#
+for (i in backgrounds) {#
+	Data <- Chisqs[which(results[,3]== i)]#
+	addHist(Y=counter, Dat=Data, Color=backgroundCol[counter])#
+	counter <- counter +1#
+}#
+abline(v=11.70, lty=2, lwd=2, col='black')#
+dev.off()
+dev.off()
+dev.off()
+Simulation <- simDraws(10000)
+addHist(Y=7, Dat=Simulation, Color="lightgray")
+mtext(side=2, at=7, line=0, "simulated")
+abline(v=11.70, lty=2, lwd=2, col='black')
+addHist(Y=7, Dat=Simulation, Color="lightgray")
+par(las=1, mar=c(4,4,1,1), mgp=c(2,0.5,0), tck=-0.01, cex.axis=1)#
+plot(1,1,xlim=c(0,400), ylim=c(1,8.5), xlab="", ylab="", type="n", yaxt="n")#
+axis(2, at=1:length(backgrounds), labels=backgrounds)#
+mtext(side=1, expression(chi^2), cex=1.75, line=2.5)#
+counter <- 1#
+for (i in backgrounds) {#
+	Data <- Chisqs[which(results[,3]== i)]#
+	addHist(Y=counter, Dat=Data, Color=backgroundCol[counter])#
+	counter <- counter +1#
+}#
+abline(v=11.70, lty=2, lwd=2, col='black')#
+#
+Simulation <- simDraws(10000)#
+addHist(Y=7, Dat=Simulation, Color="lightgray")#
+mtext(side=2, at=7, line=0, "simulated")
+abline(v=11.70, lty=2,lwd=2)
+Fit <- c(1,1,1,1,1,1)
+names(Fit) <- 1:6
+Simulation2 <- simDraws(1e4, w=Fit)
+addHist(Y=8, Dat=Simulation2, Color=rgb(0,0,0,0.25))
+Fit <- c(0.1,1,1,1,1,1)
+names(Fit) <- 1:6
+Simulation3 <- simDraws(1e4, w=Fit)
+addHist(Y=8, Dat=Simulation3, Color=rgb(0,0,0,0.25))
+Fit <- c(0.5,0.6,0.7,1,1,1)
+names(Fit) <- 1:6
+Simulation4 <- simDraws(1e4, w=Fit)
+addHist(Y=8, Dat=Simulation4, Color=rgb(0,0,0,0.25))
+Fit <- c(0.1,0.2,0.3,0.4,0.5,1)
+names(Fit) <- 1:6
+Simulation5 <- simDraws(1e4, w=Fit)
+addHist(Y=8, Dat=Simulation5, Color=rgb(0,0,0,0.25))
+Fit <- c(0.1,0.1,0.1,0.1,0.1,1)
+names(Fit) <- 1:6
+Simulation6 <- simDraws(1e4, w=Fit)
+addHist(Y=8, Dat=Simulation6, Color=rgb(0,0,0,0.25))
+mtext(side=2, at=8, line=0, "sel. sim.")
+Simulation7 <- c(Simulation2, Simulation3, Simulation4, Simulation5, Simulation6)
+addHist(Y=8, Dat=Simulation7, Color=rgb(0,0,1,0.25))
+pdf('004_sims.pdf.')#
+Simulation <- simDraws(10000)#
+addHist(Y=7, Dat=Simulation, Color="lightgray")#
+mtext(side=2, at=7, line=0, "simulated")#
+abline(v=11.70, lty=2,lwd=2)#
+Fit <- c(1,1,1,1,1,1)#
+names(Fit) <- 1:6#
+Simulation2 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation2, Color=rgb(0,0,0,0.25))#
+Fit <- c(0.1,1,1,1,1,1)#
+names(Fit) <- 1:6#
+Simulation3 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation3, Color=rgb(0,0,0,0.25))#
+Fit <- c(0.5,0.6,0.7,1,1,1)#
+names(Fit) <- 1:6#
+Simulation4 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation4, Color=rgb(0,0,0,0.25))#
+Fit <- c(0.1,0.2,0.3,0.4,0.5,1)#
+names(Fit) <- 1:6#
+Simulation5 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation5, Color=rgb(0,0,0,0.25))#
+Fit <- c(0.1,0.1,0.1,0.1,0.1,1)#
+names(Fit) <- 1:6#
+Simulation6 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation6, Color=rgb(0,0,0,0.25))#
+mtext(side=2, at=8, line=0, "sel. sim.")#
+Simulation7 <- c(Simulation2, Simulation3, Simulation4, Simulation5, Simulation6)#
+addHist(Y=8, Dat=Simulation7, Color=rgb(0,0,1,0.25))#
+dev.off()
+pdf('004_sims.pdf.')
+dev.off()
+pdf('004_sims.pdf.')#
+par(las=1, mar=c(4,4,1,1), mgp=c(2,0.5,0), tck=-0.01, cex.axis=1)#
+plot(1,1,xlim=c(0,400), ylim=c(1,8.5), xlab="", ylab="", type="n", yaxt="n")#
+axis(2, at=1:length(backgrounds), labels=backgrounds)#
+mtext(side=1, expression(chi^2), cex=1.75, line=2.5)#
+counter <- 1#
+for (i in backgrounds) {#
+	Data <- Chisqs[which(results[,3]== i)]#
+	addHist(Y=counter, Dat=Data, Color=backgroundCol[counter])#
+	counter <- counter +1#
+}#
+abline(v=11.70, lty=2, lwd=2, col='black')#
+Simulation <- simDraws(10000)#
+addHist(Y=7, Dat=Simulation, Color="lightgray")#
+mtext(side=2, at=7, line=0, "simulated")#
+abline(v=11.70, lty=2,lwd=2)#
+Fit <- c(1,1,1,1,1,1)#
+names(Fit) <- 1:6#
+Simulation2 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation2, Color=rgb(0,0,0,0.25))#
+Fit <- c(0.1,1,1,1,1,1)#
+names(Fit) <- 1:6#
+Simulation3 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation3, Color=rgb(0,0,0,0.25))#
+Fit <- c(0.5,0.6,0.7,1,1,1)#
+names(Fit) <- 1:6#
+Simulation4 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation4, Color=rgb(0,0,0,0.25))#
+Fit <- c(0.1,0.2,0.3,0.4,0.5,1)#
+names(Fit) <- 1:6#
+Simulation5 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation5, Color=rgb(0,0,0,0.25))#
+Fit <- c(0.1,0.1,0.1,0.1,0.1,1)#
+names(Fit) <- 1:6#
+Simulation6 <- simDraws(1e4, w=Fit)#
+addHist(Y=8, Dat=Simulation6, Color=rgb(0,0,0,0.25))#
+mtext(side=2, at=8, line=0, "sel. sim.")#
+Simulation7 <- c(Simulation2, Simulation3, Simulation4, Simulation5, Simulation6)#
+addHist(Y=8, Dat=Simulation7, Color=rgb(0,0,1,0.25))#
+dev.off()

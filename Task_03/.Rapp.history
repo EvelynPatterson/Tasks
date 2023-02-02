@@ -1,0 +1,260 @@
+old.dir <- getwd()
+dir.create()
+dir.create(testdir)
+dir.create("testdir")
+setwd()
+setwd("testdir")
+file.reate("mytest.R")
+file.create("mytest.R")
+list.files()
+file.exists("mytest.R")
+file.info("mytest.R")
+file.rename(from = "mytest.R" , to = "mytest2.R")
+file.copy("mytest2.R" , "mytest3.R")
+file.path("mytest3.R")
+file.path("folder1" , "folder2")
+?dir.create
+dir.create(file.path("testdir2" , "testdir3"), recursive = TRUE)
+setwd("..")
+setwd()
+setwd(old.dir)
+1:20
+pi:10
+15:1
+? `:`
+seq(1,20)
+seq(0,10,by=0.5)
+my_seq <- seq(5, 10, length=30)
+length(my_seq)
+1:length(my_seq)
+seq(along.with = my_seq)
+seq_along(my_seq)
+rep(0, times = 40)
+rep(c(0, 1, 2), times = 10)
+rep(c(0, 1, 2), each = 10)
+x <- c(44, NA, 5, NA)
+x*3
+y <- rnorm(1000)
+z <- rep(NA, 1000)
+my_data <- sample(c(y, z), 100)
+my_na <- is.na(my_data)
+my_na
+my_data == NA
+sum(my_na)
+my_data
+0/0
+Inf - Inf
+x
+x[1:10]
+x[is.na(x)]
+y <- x[!is.na(x)]
+y
+y[y > 0]
+x[x > 0]
+x[!is.na(x) & x > 0]
+x[c(3, 5, 7)]
+x[0]
+x[3000]
+x[c(-2, -10)]
+x[-c(2, 10)]
+vect <- c(foo = 11, bar = 2, norf = NA)
+vect
+names(vect)
+vect2 <- c(11, 2, NA)
+names(vect2) <- c("foo", "bar", "norf")
+identical(vect, vect2)
+vect["bar"]
+vect[c("foo", "bar")]
+my_vector <- 1:20
+my_vector
+dim(my_vector)
+length(my_vector)
+dim(my_vector) <- c(4, 5)
+dim(my_vector)
+attributes(my_vector)
+my_vector
+class(my_vector)
+my_matrix <- my_vector
+?matrix
+my_matrix2 <- matrix(data = 1:20,nrow = 4, ncol = 5)
+identical(my_matrix, my_matrix2)
+patients <- c("Bill", "Gina", "Kelly", "Sean")
+cbind(patients, my_matrix)
+my_data <- data.frame(patients, my_matrix)
+my_data
+class(my_data)
+cnames <- c("patient", "age", "weight", "bp", "rating", "test")
+colnames(my_data)
+colnames(my_data) <- cnames
+my_data
+TRUE == TRUE
+(FALSE == FALSE) == FALSE
+(FALSE == TRUE) == FALSE
+6 == 7
+6 < 7
+10 <= 10
+5 != 7
+5 !== 7
+5 !TRUE 7
+!(5 == 7)
+FALSE & FALSE
+TRUE & c(TRUE, FALSE, FALSE)
+TRUE && c(TRUE, FALSE, FALSE)
+TRUE | c(TRUE, FALSE, FALSE)
+TRUE || c(TRUE, FALSE, FALSE)
+5 > 8 || 6 != 8 && 4 > 3.9
+isTRUE(6 > 4)
+identical('twins', 'twins')
+xor(5 == 6, !FALSE)
+ints <- sample(10)
+ints
+ints > 5
+which(ints > 7)
+any(0)
+any(< 0)
+any(ints < 0)
+all(ints > 0)
+Sys.Date()
+mean(c(2, 4, 5))
+submit()
+boring_function("My first function!")
+boring_function
+submit()
+my_mean(c(4, 5, 10))
+submit()
+remainder(5)
+remainder(11, 5)
+remainder(divisor = 11, num = 5)
+remainder(4, div = 2)
+args(remainder)
+submit()
+evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
+evaluate(function(x){x+1},6)
+evaluate(function(x){x[1]}, c(8, 4, 0))
+evaluate(function(x){x[length(x)]}, c(8, 4, 0))
+?paste
+paste("Programming", "is", "fun!")
+submit()
+telegram("hi", "everyone")
+submit()
+mad_libs("car", "large", "seatbelt")
+submit()
+'I' %p% 'love' %p% 'R!'
+data(cars)
+?cars
+head(cars)
+plot(cars)
+?plot()
+?plot
+plot(x = cars$speed, y = cars$dist)
+plot(x = cars$dist, y = cars$speed)
+plot(x = cars$speed, y = cars$dist, xlab = "Speed")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance", xlab = "Speed")
+plot(cars, main = "My Plot")
+plot(cars, sub = "My Plot Subtitle")
+plot(cars, col = 2)
+plot(cars, xlim = c(10, 15))
+plot(cars, pch = 2)
+data(mtcars)
+?boxplot
+boxplot(formula = mpg ~ cyl, data = mtcars)
+hist(mtcars$mpg)
+library(httr)set_config(config(ssl_verifypeer = OL))
+library(httr)set_config(config(ssl_verifypeer = 0L))
+install.packages(httr)
+library(httr)
+library("httr")
+set_config(config(ssl_verifypeer = 0L))
+install.packages("httr")
+5
+A <- 5
+A *2
+B <- c(A, 5, 5)
+B
+B *2
+'B' *2
+B <- c(A,5,5)
+B*2
+C <- c(B, 6, 10)
+C *6
+D <- c(1,5,10,15,20)
+sum(D)
+mean(D)
+min(D)
+E <- c(6,7,8,9,10)
+which(E==8)
+which(E>8)
+E[which(E>8)]
+trueMean1 <- 5
+trueSD1 <- 5
+population1 <- rnorm(1 e6, trueMean2, trueSD2)
+population1 <- rnorm(1e6, trueMean2, trueSD2)
+population1 <- rnorm(1e6, trueMean1, trueSD1)
+trueMean2 <- 4
+trueSD2 <- 5
+population2 <- rnorm(1e6, trueMean2, trueSD2)
+Size <- 50
+Sample1 <- sample(population1, Size)
+Sample2 <- sample(population2, Size)
+boxplot(Sample1, Sample2)
+pdf(samples.pdf)
+pdf('samples.pdf')
+boxplot(Sample1, Sample2)
+dev.off()
+individual1 <- c("B", "A")
+individual2 <- c("A", "A")
+Gam1 <- sample(individual1, 1)
+Gam2 <- sample(individual2, 1)
+newBaby <- c(Gam1, Gam2)
+isHet <- c()
+for(i in 1:100)
+Gam1 <- sample(individual1, 1)
+Gam2 <- sample(individual2, 1)
+newBaby <- c(Gam1, Gam2)
+isHet [i] <- Gam1 == Gam2
+sum(isHet)/length(isHet)
+for(i in 1:100)	{#
+	Gam1 <- sample(individual1, 1)#
+	Gam2 <- sample(individual2, 1)#
+	newBaby <- c(Gam1, Gam2)#
+	isHet [i] <- Gam1 == Gam2#
+}
+sum(isHet)/length(isHet)
+for(i in 1:100)
+a
+pdf('samples.pdf')#
+boxplot(Sample1, Sample2)#
+dev.off()
+boxplot(Sample1, Sample2)
+source("http://jonsmitchell.com/code/simFxn04.R")
+library(httr)
+set_config(config(ssl_verifypeer = 0L))
+source("http://jonsmitchell.com/code/simFxn04.R")
+source("simFxn04.R")
+getwd()
+sewtwd("~/Desktop/Evolution/Tasks/Task_03")
+setwd("~/Desktop/Evolution/Tasks/Task_03")
+pdf('samples.pdf')#
+boxplot(Sample1, Sample2)#
+dev.off()
+source("simFxn04.R")
+MatGrandma <- makeFounder("grandma_mom")
+MatGrandpa <- makeFounder("grandpa_mom")
+PatGrandma <- makeFounder("grandma_da")
+PatGrandpa <- makeFounder("grandpa_da")
+Alan <- makeBaby(PatGrandma, PatGrandpa)
+Brenda <- makeBaby(PatGrandma, PatGrandpa)
+Focus <- makeBaby(Brenda, Alan)
+ToMom <- length(grep("mom", Focus))/length(Focus)
+ToMomMom <- length(grep("grandma_mom", Focus))/length(Focus)
+ToMomDad <- length(grep("grandpa_mom", Focus))/length(Focus)
+Sibling_01 <- makeBaby(Brenda, Alan)
+ToSib <- length(intersect(Focus, Sibling_01))/length(Focus)
+ManySiblings <- replicate(1e3, length(intersect(Focus, makeBaby(Brenda, Alan)))/length(Focus))
+quantile(ManySiblings)
+mean(ManySiblings)
+hist(ManySiblings, col='green')
+pdf("003_relatePlot.pdf")#
+hist(ManySiblings, col='green')#
+dev.off()
