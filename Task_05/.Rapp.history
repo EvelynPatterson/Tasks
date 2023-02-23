@@ -1,0 +1,301 @@
+list.files()
+?list.files
+args()
+list.files(args)
+args(list.files)
+"old.dir"
+old.dir <- getwd()
+dir.create()
+dir.create(testdir)
+dir.create("testdir")
+setwd()
+setwd("testdir")
+file.reate("mytest.R")
+file.create("mytest.R")
+list.files()
+file.exists("mytest.R")
+file.info("mytest.R")
+file.rename(from = "mytest.R" , to = "mytest2.R")
+file.copy("mytest2.R" , "mytest3.R")
+file.path("mytest3.R")
+file.path("folder1" , "folder2")
+?dir.create
+dir.create(file.path("testdir2" , "testdir3"), recursive = TRUE)
+setwd("..")
+setwd()
+setwd(old.dir)
+1:20
+pi:10
+15:1
+? `:`
+seq(1,20)
+seq(0,10,by=0.5)
+my_seq <- seq(5, 10, length=30)
+length(my_seq)
+1:length(my_seq)
+seq(along.with = my_seq)
+seq_along(my_seq)
+rep(0, times = 40)
+rep(c(0, 1, 2), times = 10)
+rep(c(0, 1, 2), each = 10)
+x <- c(44, NA, 5, NA)
+x*3
+y <- rnorm(1000)
+z <- rep(NA, 1000)
+my_data <- sample(c(y, z), 100)
+my_na <- is.na(my_data)
+my_na
+my_data == NA
+sum(my_na)
+my_data
+0/0
+Inf - Inf
+x
+x[1:10]
+x[is.na(x)]
+y <- x[!is.na(x)]
+y
+y[y > 0]
+x[x > 0]
+x[!is.na(x) & x > 0]
+x[c(3, 5, 7)]
+x[0]
+x[3000]
+x[c(-2, -10)]
+x[-c(2, 10)]
+vect <- c(foo = 11, bar = 2, norf = NA)
+vect
+names(vect)
+vect2 <- c(11, 2, NA)
+names(vect2) <- c("foo", "bar", "norf")
+identical(vect, vect2)
+vect["bar"]
+vect[c("foo", "bar")]
+my_vector <- 1:20
+my_vector
+dim(my_vector)
+length(my_vector)
+dim(my_vector) <- c(4, 5)
+dim(my_vector)
+attributes(my_vector)
+my_vector
+class(my_vector)
+my_matrix <- my_vector
+?matrix
+my_matrix2 <- matrix(data = 1:20,nrow = 4, ncol = 5)
+identical(my_matrix, my_matrix2)
+patients <- c("Bill", "Gina", "Kelly", "Sean")
+cbind(patients, my_matrix)
+my_data <- data.frame(patients, my_matrix)
+my_data
+class(my_data)
+cnames <- c("patient", "age", "weight", "bp", "rating", "test")
+colnames(my_data)
+colnames(my_data) <- cnames
+my_data
+TRUE == TRUE
+(FALSE == FALSE) == FALSE
+(FALSE == TRUE) == FALSE
+6 == 7
+6 < 7
+10 <= 10
+5 != 7
+5 !== 7
+5 !TRUE 7
+!(5 == 7)
+FALSE & FALSE
+TRUE & c(TRUE, FALSE, FALSE)
+TRUE && c(TRUE, FALSE, FALSE)
+TRUE | c(TRUE, FALSE, FALSE)
+TRUE || c(TRUE, FALSE, FALSE)
+5 > 8 || 6 != 8 && 4 > 3.9
+isTRUE(6 > 4)
+identical('twins', 'twins')
+xor(5 == 6, !FALSE)
+ints <- sample(10)
+ints
+ints > 5
+which(ints > 7)
+any(0)
+any(< 0)
+any(ints < 0)
+all(ints > 0)
+Sys.Date()
+mean(c(2, 4, 5))
+submit()
+boring_function("My first function!")
+boring_function
+submit()
+my_mean(c(4, 5, 10))
+submit()
+remainder(5)
+remainder(11, 5)
+remainder(divisor = 11, num = 5)
+remainder(4, div = 2)
+args(remainder)
+submit()
+evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
+evaluate(function(x){x+1},6)
+evaluate(function(x){x[1]}, c(8, 4, 0))
+evaluate(function(x){x[length(x)]}, c(8, 4, 0))
+?paste
+paste("Programming", "is", "fun!")
+submit()
+telegram("hi", "everyone")
+submit()
+mad_libs("car", "large", "seatbelt")
+submit()
+'I' %p% 'love' %p% 'R!'
+data(cars)
+?cars
+head(cars)
+plot(cars)
+?plot()
+?plot
+plot(x = cars$speed, y = cars$dist)
+plot(x = cars$dist, y = cars$speed)
+plot(x = cars$speed, y = cars$dist, xlab = "Speed")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance", xlab = "Speed")
+plot(cars, main = "My Plot")
+plot(cars, sub = "My Plot Subtitle")
+plot(cars, col = 2)
+plot(cars, xlim = c(10, 15))
+plot(cars, pch = 2)
+data(mtcars)
+?boxplot
+boxplot(formula = mpg ~ cyl, data = mtcars)
+hist(mtcars$mpg)
+library(httr)set_config(config(ssl_verifypeer = OL))
+library(httr)set_config(config(ssl_verifypeer = 0L))
+install.packages(httr)
+library(httr)
+library("httr")
+set_config(config(ssl_verifypeer = 0L))
+install.packages("httr")
+setwd('~/Desktop/Evolution/Tasks/Task_05')
+getwd()
+install.packages("learnPopGen")
+install.packages("adegenet")
+install.packages("poppr")
+install.packages("dplyr")
+install.packlages("hierfstat")
+install.packages("hierfstat")
+install.packages("reshape2")
+install.packages("ggplot2")
+install.packages("RColorBrewer")
+install.packages("scales")
+library(adegenet)
+library(poppr)
+library(dplyr)
+library(hierfstat)
+library(reshape2)
+library(ggplot2)
+library(RColorBrewer)
+library(scales)
+lobster <- read.csv("https://jonsmitchell.com/data/lobster_genotypes.csv")
+lobster <- read.csv("~/Desktop/lobster_genotypes.csv")
+lobster_wide <- reshape(lobster, idvar=c("ID", "Site"), timevar = "Locus", direction = "wide", sep = "")
+colnames(lobster_wide) <- gsub("Genotype", "", colnames(lobster_wide))
+snpgeno <- lobster_wide[, 3:ncol(lobster_wide)]
+snps_to_remove <- c("25580", "32362", "41521", "53889", "65376", "8953", "21197", "15531", "22740", "28357", "33066", "51507", "53052", "53263", "21880", "22323", "22365")
+snpgeno <- snpgeno[ , !colnames(snpgeno) %in% snps_to_remove]
+ind <- as.character(lobster_wide$ID)
+site <- as.character(lobster_wide$Site)
+lobster_gen <- df2genind(snpgeno, ploidy=2, ind.names=ind, pop=site, sep="")
+lobster_gen <- missingno(lobster_gen, type="geno", cutoff=0.20)
+mlg(lobster_gen)
+dups_lobster <- mlg.id(lobster_gen)
+lob_dups <- c()
+x<- 1
+for(i in dups_lobster){#
+	if(length(dups_lobster[i])> 1){#
+		lob_dups[x]<- i#
+		x<- x+1#
+	}#
+}
+lob_Nodups <- indNames(lobster_gen)[! indNames(lobster_gen) %in% lob_dups]
+lobster_gen <- lobster_gen[lob_Nodups, ]
+summary(lobster_gen$pop)
+basic_lobster<- basic.stats(lobster_gen, diploid=TRUE)
+Ho_lobster <- round(apply(basic_lobster$Ho, MARGIN=2, FUN=mean, na.rm=TRUE), digits=3)
+He_lobster<- round(apply(basic_lobster$Hs, MARGIN=2, FUN=mean, na.rm=TRUE), digits=3)
+par(mar=c(4,4,1,1), las=1, mgp=c(2,0.25,0), tck=-0.005, cex.lab=1.25)
+plot(He_lobster, Ho_lobster, xlab="expected H", ylab="observed H", pch=21, bg="gray", xlim=c(0.32, 0.405), ylim=c(0.32, 0.405))
+abline(0,1,lty=3)
+abline(lm(Ho_lobster~He_lobster), lty=2, lwd=1.25, col='red')
+Fis <- apply(basic_lobster$Fis, MARGIN=2, FUN=mean, na.rm=TRUE)
+pdf('005_plot01.pdf')#
+par(mar=c(4,4,1,1), las=1, mgp=c(2,0.25,0), tck=-0.005, cex.lab=1.25)#
+plot(He_lobster, Ho_lobster, xlab="expected H", ylab="observed H", pch=21, bg="gray", xlim=c(0.32, 0.405), ylim=c(0.32, 0.405))#
+abline(0,1,lty=3)#
+abline(lm(Ho_lobster~He_lobster), lty=2, lwd=1.25, col='red')#
+dev.off()
+Fis <- apply(basic_lobster$Fis, MARGIN=2, FUN=mean, na.rm=TRUE)
+lobster_gen_sub<- popsub(lobster_gen, sublist=c("Ale", "Ber", "Brd", "Pad", "Sar17", "Vig"))
+lobster_fst <- genet.dist(lobster_gen_sub, method="WC84") %>% round(digits=3)
+lab_order<- c("Ber", "Brd", "Pad", "Vig", "Sar17", "Ale")
+fst.mat<- as.matrix(lobster_fst)
+fst.mat1<- fst.mat[lab_order, ]
+fst.mat2<- fst.mat1[, lab_order]
+ind <- which(upper.tri(fst.mat2), arr.ind=TRUE)
+Fst=fst.mat2[ ind ])
+fst.df <- data.frame(Site1= dimnames(fst.mat2)[[2]][ind[, 2]], #
+					Site2= dimnames(fst.mat2)[[1]][ind[, 1]],#
+					Fst=fst.mat2[ ind ])
+fst.df$Site1<- factor(fst.df$Site1, levels=unique(fst.df$Site1))
+fst.df$Site2<- factor(fst.df$Site2, levels=unique(fst.df$Site2))
+fst.df$Fst[fst.df$Fst<0]<- 0
+fst.label<- expression(italic("F")[ST])
+mid <- max(fst.df$Fst)/2
+ggplot(data=fst.df, aes(x=Site1, y=Site2, fill=Fst))+#
+	geom_tile(colour="black")+#
+	geom_text(aes(label=Fst), color="black", size=3)+#
+	scale_fill_gradient2(low="blue", mid="pink", high="red", #
+	breaks=c(0,0.05,0.10,0.15))+#
+	scale_x_discrete(expand=c(0,0))+#
+	scale_y_discrete(expand=c(0,0), position="right")+#
+	theme(axis.text=element_text(colour="black", size=10, face="bold"),#
+		axis.title=element_blank(),#
+		panel.grid=element_blank(),#
+		panel.background=element_blank(),#
+		legend.position="right",#
+		legend.title=element_text(size=14, face="bold"),#
+		legend.text=element_text(size=10)#
+		)
+pdf('005_plot02.pdf')#
+ggplot(data=fst.df, aes(x=Site1, y=Site2, fill=Fst))+#
+	geom_tile(colour="black")+#
+	geom_text(aes(label=Fst), color="black", size=3)+#
+	scale_fill_gradient2(low="blue", mid="pink", high="red", #
+	breaks=c(0,0.05,0.10,0.15))+#
+	scale_x_discrete(expand=c(0,0))+#
+	scale_y_discrete(expand=c(0,0), position="right")+#
+	theme(axis.text=element_text(colour="black", size=10, face="bold"),#
+		axis.title=element_blank(),#
+		panel.grid=element_blank(),#
+		panel.background=element_blank(),#
+		legend.position="right",#
+		legend.title=element_text(size=14, face="bold"),#
+		legend.text=element_text(size=10)#
+		)#
+dev.off()
+install.packages("coala")
+library(coala)
+library(learnPopGen)
+coalescent.plot()
+pdf("005_extracredit.pdf")#
+install.packages("coala")#
+library(coala)#
+library(learnPopGen)#
+coalescent.plot()#
+dev.off()
+coalescent.plot()
+coalescent.plot()
+pdf("005_extracredit2.pdf")#
+coalescent.plot()#
+dev.off()
+coalescent.plot()
+pdf("005_extracredit3.pdf")#
+coalescent.plot()#
+dev.off()
