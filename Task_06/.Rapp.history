@@ -1,0 +1,516 @@
+dim(my_vector)
+attributes(my_vector)
+my_vector
+class(my_vector)
+my_matrix <- my_vector
+?matrix
+my_matrix2 <- matrix(data = 1:20,nrow = 4, ncol = 5)
+identical(my_matrix, my_matrix2)
+patients <- c("Bill", "Gina", "Kelly", "Sean")
+cbind(patients, my_matrix)
+my_data <- data.frame(patients, my_matrix)
+my_data
+class(my_data)
+cnames <- c("patient", "age", "weight", "bp", "rating", "test")
+colnames(my_data)
+colnames(my_data) <- cnames
+my_data
+TRUE == TRUE
+(FALSE == FALSE) == FALSE
+(FALSE == TRUE) == FALSE
+6 == 7
+6 < 7
+10 <= 10
+5 != 7
+5 !== 7
+5 !TRUE 7
+!(5 == 7)
+FALSE & FALSE
+TRUE & c(TRUE, FALSE, FALSE)
+TRUE && c(TRUE, FALSE, FALSE)
+TRUE | c(TRUE, FALSE, FALSE)
+TRUE || c(TRUE, FALSE, FALSE)
+5 > 8 || 6 != 8 && 4 > 3.9
+isTRUE(6 > 4)
+identical('twins', 'twins')
+xor(5 == 6, !FALSE)
+ints <- sample(10)
+ints
+ints > 5
+which(ints > 7)
+any(0)
+any(< 0)
+any(ints < 0)
+all(ints > 0)
+Sys.Date()
+mean(c(2, 4, 5))
+submit()
+boring_function("My first function!")
+boring_function
+submit()
+my_mean(c(4, 5, 10))
+submit()
+remainder(5)
+remainder(11, 5)
+remainder(divisor = 11, num = 5)
+remainder(4, div = 2)
+args(remainder)
+submit()
+evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
+evaluate(function(x){x+1},6)
+evaluate(function(x){x[1]}, c(8, 4, 0))
+evaluate(function(x){x[length(x)]}, c(8, 4, 0))
+?paste
+paste("Programming", "is", "fun!")
+submit()
+telegram("hi", "everyone")
+submit()
+mad_libs("car", "large", "seatbelt")
+submit()
+'I' %p% 'love' %p% 'R!'
+data(cars)
+?cars
+head(cars)
+plot(cars)
+?plot()
+?plot
+plot(x = cars$speed, y = cars$dist)
+plot(x = cars$dist, y = cars$speed)
+plot(x = cars$speed, y = cars$dist, xlab = "Speed")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance", xlab = "Speed")
+plot(cars, main = "My Plot")
+plot(cars, sub = "My Plot Subtitle")
+plot(cars, col = 2)
+plot(cars, xlim = c(10, 15))
+plot(cars, pch = 2)
+data(mtcars)
+?boxplot
+boxplot(formula = mpg ~ cyl, data = mtcars)
+hist(mtcars$mpg)
+library(httr)set_config(config(ssl_verifypeer = OL))
+library(httr)set_config(config(ssl_verifypeer = 0L))
+install.packages(httr)
+library(httr)
+library("httr")
+set_config(config(ssl_verifypeer = 0L))
+install.packages("httr")
+setwd('~/Desktop/Evolution/Tasks/Task_06')
+#download.file("http://jonsmitchell.com/data/scrubjayFreq.csv", '~/Desktop/Evolution/Tasks/Task_06/scrubjayFreq.csv')
+source('reformatData07.R')
+source('simFxn.R')
+plot(1, 1, type="n", xlim=c(1998, 2013), ylim=c(0, 1))
+s <- apply(overallFreq, 2, function(x) lines(overallFreq[,1], x, col=rgb(0,0,0,0.1)))
+rescaleFreq <- apply(overallFreq[,3:ncol(overallFreq)], 2, function(x)x-x[1])
+rescaleFreq <- apply(overallFreq[,3:ncol(overallFreq)], 2, function(x)x-x[1])
+plot(1,1,type="n", xlim=c(1998,2013), ylim=c(-0.25,0.25))
+s<- apply(rescaleFreq, 2, function(x) lines(overallFreq[,1], x, col=rgb(0,0,0,0.1)))
+dYear<-c()
+dAlleles<- c()
+for (i in 3:ncol(overallFreq)){#
+	dYear<- c(dYear, overallFreq[,1])#
+	Vec<- overallFreq[,i]#
+	Init<- overallFreq[1,i]#
+	dAlleles<-c(dAlleles, Vec-Init)#
+}
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=100, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+addFit(nruns=50, n=315, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+addFit(nruns=50, n=315, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=315, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=385, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=365, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+pdf('006_plot_n360h0s0')#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=100, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off
+pdf('006_plot_n360h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+dev.off()
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=360, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+pdf('006_plot_n360h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+dev.off()
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=380, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=380, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=380, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)
+pdf('006_plot_n370h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n370h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n370h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=370, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n375h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=375, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n375h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=375, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n375h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=375, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n275h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=275, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n280h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=280, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n290h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=290, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n290h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=290, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n290h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=290, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n290h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=290, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n290h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=290, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n290h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=290, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n285h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=285, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+plot(alleleFreqs$d_freq, alleleFreqs$d_imm, xlim=c(-0.15,0.15), xlab="overall freq. change", ylab="freq. change in subset")
+points(alleleFreqs$d_freq, alleleFreqs$d_birth, col='blue')
+points(alleleFreqs$d_freq, alleleFreqs$d_surv, col='red')
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
+pdf('006_plot_n283h0s0.pdf')#
+smoothScatter(dYear,dAlleles, colramp=Pal, nbin=100)#
+smoothScatter(dYear, dAlleles, colramp=Pal, nbin=100, xlab="year", ylab="change in allele freq. since 1998")#
+addFit(nruns=50, n=283, h=0, s=0, ngens=18, startT=1997, simCol="gray40", rescale=TRUE)#
+dev.off()
