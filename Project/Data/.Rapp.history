@@ -3,27 +3,59 @@ my_data1 <- read.csv("FemaleChoice.csv")
 my_data2 <- read.csv("MaleCognitionColor.csv")
 head(my_data1)
 head(my_data2)
-correlation <- cor(data$x, data$y, method='pearson')
-head(data)
-correlation <- cor(X, Y, method='pearson')
-setwd('~/Desktop/Evolution/Tasks/Project/Data')#
-my_data1 <- read.csv("FemaleChoice.csv")#
-my_data2 <- read.csv("MaleCognitionColor.csv")#
-head(my_data1)#
-head(my_data2)
-par(mfrow=c(1,3))#
-X <- my_data1[,"ThroatIntensity"]#
+par(mfrow=c(1,3))
+X <- my_data1[,"ThroatIntensity"]
+Y <- my_data1[,4]
+plot(X, Y)
+LogReg <- glm(Y~X, family=binomial(link="logit"))
+summary(LogReg)
+predY <- predict(LogReg, data.frame(X=seq(from=0, to=3, by=0.1)), type="response")
+lines(x=seq(from=0, to=3, by=0.1), exp(predY)/(1+exp(predY)), col='red')
+cor(X, Y)
+X <- my_data1[,"ThroatArea"]
+Y <- my_data1[,4]
+plot(X, Y)
+LogReg <- glm(Y~X, family=binomial(link="logit"))
+summary(LogReg)
+predY <- predict(LogReg, data.frame(X=seq(from=0, to=5, by=0.1)), type="response")
+lines(x=seq(from=0, to=5, by=0.1), exp(predY)/(1+exp(predY)), col='red')
+X <- my_data1[,"ThroatCombined"]
+Y <- my_data1[,4]
+plot(X, Y)
+LogReg <- glm(Y~X, family=binomial(link="logit"))
+summary(LogReg)
+X<- my_data2[, "MCPreThroatCombined_a"]
+Y <- my_data2[, 3]
+plot(X, Y)
+LogReg <- glm(Y~X, family=binomial(link="logit"))
+summary(LogReg)
+X <- my_data2[, "MCPreThroatCombined_b"]
+Y <- my_data2[, 3]
+plot(X,Y)
+LogReg <- glm(Y~X, family=binomial(link="logit"))
+summary(LogReg)
+X <- my_data1[,"ThroatArea"]#
 Y <- my_data1[,4]#
 plot(X, Y)#
 LogReg <- glm(Y~X, family=binomial(link="logit"))#
 summary(LogReg)#
-predY <- predict(LogReg, data.frame(X=seq(from=0, to=3, by=0.1)), type="response")#
-lines(x=seq(from=0, to=3, by=0.1), exp(predY)/(1+exp(predY)), col='red')
-cor(X, Y)
-par(mfrow=c(1,3))#
-X <- my_data1[,"ThroatIntensity"]#
+predY <- predict(LogReg, data.frame(X=seq(from=0, to=5, by=0.1)), type="response")#
+lines(x=seq(from=0, to=5, by=0.1), exp(predY)/(1+exp(predY)), col='red')
+cor(X,Y)
+X <- my_data1[,"ThroatCombined"]#
 Y <- my_data1[,4]#
-plot(X, Y)
-LogReg <- glm(Y~X, family=binomial(link="logit"))
-LogReg <- glm(Y~X, family=binomial(link="logit"))
-summary(LogReg)
+plot(X, Y)#
+LogReg <- glm(Y~X, family=binomial(link="logit"))#
+summary(LogReg)#
+predY <- predict(LogReg, data.frame(X=seq(from=0, to=7, by=0.1)), type="response")#
+lines(x=seq(from=0, to=7, by=0.1), exp(predY)/(1+exp(predY)), col='red')#
+dev.off()
+X <- my_data1[,"ThroatCombined"]#
+Y <- my_data1[,4]#
+plot(X, Y)#
+LogReg <- glm(Y~X, family=binomial(link="logit"))#
+summary(LogReg)#
+predY <- predict(LogReg, data.frame(X=seq(from=0, to=7, by=0.1)), type="response")#
+lines(x=seq(from=0, to=7, by=0.1), exp(predY)/(1+exp(predY)), col='red')#
+dev.off()
+cor(X,Y)

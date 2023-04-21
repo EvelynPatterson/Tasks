@@ -24,6 +24,8 @@ summary(LogReg)
 predY <- predict(LogReg, data.frame(X=seq(from=0, to=5, by=0.1)), type="response")
 lines(x=seq(from=0, to=5, by=0.1), exp(predY)/(1+exp(predY)), col='red')
 
+cor(X,Y)
+
 X <- my_data1[,"ThroatCombined"]
 Y <- my_data1[,4]
 plot(X, Y)
@@ -32,6 +34,8 @@ summary(LogReg)
 predY <- predict(LogReg, data.frame(X=seq(from=0, to=7, by=0.1)), type="response")
 lines(x=seq(from=0, to=7, by=0.1), exp(predY)/(1+exp(predY)), col='red')
 dev.off()
+
+cor(X,Y)
 
 pdf("MatingSuccess2.pdf")
 X<- my_data2[, "MCPreThroatCombined_a"]
